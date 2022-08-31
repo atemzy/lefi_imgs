@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <canvas id="life" class="canvas1" width="700" height="700"></canvas>
+<div class="bodyt">
+
+<div class="slidecontainer">
+  <p>Default range fps slider:</p>
+  <input type="range" min="0" max="100" value="30" id="fpsmyRange">
+  <p>Value: <span id="fpsdemo"></span></p>
+</div>
+<div class="unrand-buttons">
+<button id="unrandb">Disable Blue Randomisation</button>
+<button id="unrandr">Disable Red Randomisation</button>
+<button id="unrandy">Disable Yellow Randomisation</button>
+<button id="unrandg">Disable Green Randomisation</button>
+</div>
+<div class="slidecontainer">
+  <p>Default range interval slider:</p>
+  <input type="range" min="0" max="100" value="10" id="intermyRange">
+  <input class="input-text bodyt" id="intermyRange" step="0.01" type="number" max="100" min="0" placeholder="10" value="">
+  <p>Value: <span id="interdemo"></span></p>
+</div>
+<button id="fullscreen">Fullscreen this!</button>
+<div class="semmi"></div>
+<div class="dots-container">
+<div class="red-dot dots">
+  <h1>Red</h1>
+  <div class="slidecontainer">
+    <p>Number of red dot:</p>
+    <input type="range" min="0" max="3000" value="500" id="rmyRange">
+    <input class="input-text" id="rmyRange" type="number" max="3000" min="0" placeholder="500" value="">
+    <p>Value: <span id="rdemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: red</p>
+    <input type="range" min="-100" max="100" value="0" id="redxredmyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="redxredmyRange" type="number">
+    <p>Value: <span id="redxreddemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: green</p>
+    <input type="range" min="-100" max="100" value="0" id="redxgreenmyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="redxgreenmyRange" type="number">
+    <p>Value: <span id="redxgreendemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: blue</p>
+    <input type="range" min="-100" max="100" value="0" id="redxbluemyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="redxbluemyRange" type="number">
+    <p>Value: <span id="redxbluedemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: yellow</p>
+    <input type="range" min="-100" max="100" value="0" id="redxyellowmyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="redxyellowmyRange" type="number">
+    <p>Value: <span id="redxyellowdemo"></span></p>
+  </div>
+</div>
+<div class="yellow-dot dots">
+  <h1>Yellow</h1>
+  <div class="slidecontainer">
+    <p>Number of yellow dot:</p>
+    <input type="range" min="0" max="3000" value="500" id="ymyRange">
+    <input class="input-text" id="ymyRange" type="number" max="3000" min="0" placeholder="500" value="">
+    <p>Value: <span id="ydemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: yellow</p>
+    <input type="range" min="-100" max="100" value="0" id="yellowxyellowmyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="yellowxyellowmyRange" type="number">
+    <p>Value: <span id="yellowxyellowdemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: green</p>
+    <input type="range" min="-100" max="100" value="0" id="yellowxgreenmyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="yellowxgreenmyRange" type="number">
+    <p>Value: <span id="yellowxgreendemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: blue</p>
+    <input type="range" min="-100" max="100" value="0" id="yellowxbluemyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="yellowxbluemyRange" type="number">
+    <p>Value: <span id="yellowxbluedemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: red</p>
+    <input type="range" min="-100" max="100" value="0" id="yellowxredmyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="yellowxredmyRange" type="number">
+    <p>Value: <span id="yellowxreddemo"></span></p>
+  </div>
+</div>
+
+<div class="green-dot dots">
+  <h1>Green</h1>
+  <div class="slidecontainer">
+    <p>Number of green dot:</p>
+    <input type="range" min="0" max="3000" value="500" id="gmyRange">
+    <input class="input-text" id="gmyRange" type="number" max="3000" min="0" placeholder="500" value="">
+    <p>Value: <span id="gdemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: green</p>
+    <input type="range" min="-100" max="100" value="0" id="greenxgreenmyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="greenxgreenmyRange" type="number">
+    <p>Value: <span id="greenxgreendemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: yellow</p>
+    <input type="range" min="-100" max="100" value="0" id="greenxyellowmyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="greenxyellowmyRange" type="number">
+    <p>Value: <span id="greenxyellowdemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: blue</p>
+    <input type="range" min="-100" max="100" value="0" id="greenxbluemyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="greenxbluemyRange" type="number">
+    <p>Value: <span id="greenxbluedemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: red</p>
+    <input type="range" min="-100" max="100" value="0" id="greenxredmyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="greenxredmyRange" type="number">
+    <p>Value: <span id="greenxreddemo"></span></p>
+  </div>
+</div>
+
+<div class="blue-dot dots">
+  <h1>Blue</h1>
+  <div class="slidecontainer">
+    <p>Number of blue dot:</p>
+    <input type="range" min="0" max="3000" value="500" id="bmyRange">
+    <input class="input-text" id="bmyRange" type="number" max="3000" min="0" placeholder="500" value="">
+    <p>Value: <span id="bdemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: blue</p>
+    <input type="range" min="-100" max="100" value="0" id="bluexbluemyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="bluexbluemyRange" type="number">
+    <p>Value: <span id="bluexbluedemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: green</p>
+    <input type="range" min="-100" max="100" value="0" id="bluexgreenmyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="bluexgreenmyRange" type="number">
+    <p>Value: <span id="bluexgreendemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: yellow</p>
+    <input type="range" min="-100" max="100" value="0" id="bluexyellowmyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="bluexyellowmyRange" type="number">
+    <p>Value: <span id="bluexyellowdemo"></span></p>
+  </div>
+  <div class="slidecontainer">
+    <p>Strong to: red</p>
+    <input type="range" min="-100" max="100" value="0" id="bluexredmyRange">
+    <input class="input-text" placeholder="0" value="" min="-100" max="100" id="bluexredmyRange" type="number">
+    <p>Value: <span id="bluexreddemo"></span></p>
+  </div>
+</div>
+
+
+</div>
+</div>
+<button id="reseto">Reset</button>
+  </body>
+  <script type="module" src="/main.js"></script>
+</html>

@@ -1,0 +1,52 @@
+.canvas1{
+  position: absolute;
+  right: 0;
+  top: 0
+}
+
+.semmi{
+  height: 80vh;
+}
+
+.unrand-buttons{
+  width: 12%;
+}
+
+button{
+  margin: 2px;
+}
+
+.dots-container{
+  width: 100%;
+}
+
+.dots-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.dots{
+  float: left;
+  padding: 20px;
+  width: 22.5%;
+  border-style: solid;
+  border-radius: 10%;
+}
+
+.blue-dot{
+  background-color: blue;
+  border-color: cyan;
+}
+.green-dot{
+  background-color: green;
+  border-color: yellowgreen;
+}
+.yellow-dot{
+  background-color: yellow;
+  border-color: violet;
+}
+.red-dot{
+  background-color: red;
+  border-color: pink;
+}
