@@ -19,7 +19,7 @@ export default class Maine {
     this.setRandomsYellow = this.code.setRandomsYellow
     this.setRandomsBlue = this.code.setRandomsBlue
     this.setRandomsGreen = this.code.setRandomsGreen
-    this.fps = 30;
+    this.fps = 60;
     this.inter = 10;
     this.gmany = this.code.setRandomsGreen.gmany;
     this.bmany = this.code.setRandomsBlue.bmany;
